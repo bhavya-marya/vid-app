@@ -32,6 +32,8 @@ app.use("/api/users", userRoutes);
 app.use("/api/videos", videoRoutes);
 app.use("/api/comments", commentRoutes);
 
+const __dirname = path.resolve(path.dirname(""));
+
 //heroku config
 app.use(express.static(path.join(__dirname, "/client/build")));
 
