@@ -39,7 +39,7 @@ const Home = ({ type }) => {
                 },
                 withCredentials: true
             }
-            const res = await axios.get(`http://localhost:3000/api/videos/${type}`, config);
+            const res = await axios.get(`https://vid-app1.herokuapp.com/api/videos/${type}`, config);
             setVideos(res.data);
             setLoading(false);
         }

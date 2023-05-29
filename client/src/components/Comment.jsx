@@ -52,7 +52,7 @@ const Comment = ({ comment }) => {
                     },
                     withCredentials: true
                 }
-                const res = await axios.get(`http://localhost:3000/api/users/find/${comment.userId}`, config);
+                const res = await axios.get(`https://vid-app1.herokuapp.com/api/users/find/${comment.userId}`, config);
                 setChannel(res.data);
 
             } catch (err) {

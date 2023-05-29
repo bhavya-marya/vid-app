@@ -69,7 +69,7 @@ const SignIn = () => {
                 },
                 withCredentials: true
             }
-            const res = await axios.post("http://localhost:3000/api/auth/signin", { name, password }, config);
+            const res = await axios.post("https://vid-app1.herokuapp.com/api/auth/signin", { name, password }, config);
             dispatch(loginSuccess(res.data));
             navigate("/");
         } catch (err) {
@@ -86,7 +86,7 @@ const SignIn = () => {
                 },
                 withCredentials: true
             }
-            axios.post("http://localhost:3000/api/auth/google", {
+            axios.post("https://vid-app1.herokuapp.com/api/auth/google", {
                 name: res.user.displayName,
                 email: res.user.email,
                 img: res.user.photoURL,
@@ -105,8 +105,8 @@ const SignIn = () => {
                 withCredentials: true
             }
 
-            await axios.post("http://localhost:3000/api/auth/signup", { name, email, password }, config);
-            const res = await axios.post("http://localhost:3000/api/auth/signin", { name, password }, config);
+            await axios.post("https://vid-app1.herokuapp.com/api/auth/signup", { name, email, password }, config);
+            const res = await axios.post("https://vid-app1.herokuapp.com/api/auth/signin", { name, password }, config);
             dispatch(loginSuccess(res.data));
             navigate("/");
         } catch (err) {

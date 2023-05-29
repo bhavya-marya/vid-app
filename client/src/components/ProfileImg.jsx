@@ -124,7 +124,7 @@ const ProfileImg = ({ setOpen }) => {
                 },
                 withCredentials: true
             }
-            const res = await axios.put(`http://localhost:3000/api/users/${currentUser._id}`, { img: url }, config);
+            const res = await axios.put(`https://vid-app1.herokuapp.com/api/users/${currentUser._id}`, { img: url }, config);
             dispatch(profileImg(url));
             setOpen(false);
             console.log(res);

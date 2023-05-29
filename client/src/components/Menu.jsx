@@ -90,7 +90,7 @@ const Menu = ({ darkMode, setDarkMode }) => {
                 },
                 withCredentials: true
             }
-            const res = await axios.post("http://localhost:3000/api/auth/signout", {}, config);
+            const res = await axios.post("https://vid-app1.herokuapp.com/api/auth/signout", {}, config);
             dispatch(logout());
             console.log(res);
         } catch (err) {
