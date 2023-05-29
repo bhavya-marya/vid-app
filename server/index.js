@@ -31,6 +31,12 @@ app.use("/api/users", userRoutes);
 app.use("/api/videos", videoRoutes);
 app.use("/api/comments", commentRoutes);
 
+app.use(express.static(path.join(__dirname, "/client/build")));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
+});
+
 app.use((err, req, res, next) => {
     const status = err.status || 500;
     const message = err.message || "something went wrong";
@@ -41,7 +47,8 @@ app.use((err, req, res, next) => {
     });
 })
 
-app.listen(3000, () => {
+
+app.listen(process.env.PORT || 3000, () => {
     connect();
     console.log("connected");
 })
