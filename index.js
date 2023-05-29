@@ -20,7 +20,7 @@ const connect = async () => {
     }
 }
 app.use(cors({
-    origin: 'http://localhost:3001',
+    origin: ['http://localhost:3001', 'https://vid-app1.herokuapp.com/'],
     credentials: true,
 }));
 
