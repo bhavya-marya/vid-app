@@ -18,7 +18,7 @@ const Recommendation = ({ tags }) => {
                 withCredentials: true
             }
             if (tags.length > 0) {
-                const res = await axios.get(`http://localhost:3000/api/videos/tags?tags=${tags}`, config);
+                const res = await axios.get(`https://vid-app1.herokuapp.com/api/videos/tags?tags=${tags}`, config);
                 setVideos(res.data);
             }
         }

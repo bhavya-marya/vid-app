@@ -46,7 +46,7 @@ const Comments = ({ videoId }) => {
                 },
                 withCredentials: true
             }
-            const res = await axios.post(`http://localhost:3000/api/comments`, { desc: newComment, videoId }, config);
+            const res = await axios.post(`https://vid-app1.herokuapp.com/api/comments`, { desc: newComment, videoId }, config);
             console.log(res.data);
             window.location.reload(false);
         } catch (err) {
@@ -62,7 +62,7 @@ const Comments = ({ videoId }) => {
                     },
                     withCredentials: true
                 }
-                const res = await axios.get(`http://localhost:3000/api/comments/${videoId}`, config);
+                const res = await axios.get(`https://vid-app1.herokuapp.com/api/comments/${videoId}`, config);
                 setComments(res.data);
             } catch (err) {
                 console.log(err);

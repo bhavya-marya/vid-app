@@ -21,7 +21,7 @@ const Search = () => {
                 },
                 withCredentials: true
             }
-            const res = await axios.get(`http://localhost:3000/api/videos/search${query}`, config);
+            const res = await axios.get(`https://vid-app1.herokuapp.com/api/videos/search${query}`, config);
             setVideos(res.data);
         }
         fetchVideos();

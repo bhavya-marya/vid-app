@@ -151,8 +151,8 @@ const Video = () => {
           withCredentials: true
         }
         currentVideo.likes.includes(currentUser._id)
-          ? await axios.put(`http://localhost:3000/api/users/unlike/${currentVideo._id}`, {}, config)
-          : await axios.put(`http://localhost:3000/api/users/like/${currentVideo._id}`, {}, config);
+          ? await axios.put(`https://vid-app1.herokuapp.com/api/users/unlike/${currentVideo._id}`, {}, config)
+          : await axios.put(`https://vid-app1.herokuapp.com/api/users/like/${currentVideo._id}`, {}, config);
         dispatch(like(currentUser._id));
       } catch (err) {
       }
@@ -173,8 +173,8 @@ const Video = () => {
           withCredentials: true
         }
         currentUser.saved.includes(currentVideo._id)
-          ? await axios.put(`http://localhost:3000/api/users/unsave/${currentVideo._id}`, {}, config)
-          : await axios.put(`http://localhost:3000/api/users/save/${currentVideo._id}`, {}, config);
+          ? await axios.put(`https://vid-app1.herokuapp.com/api/users/unsave/${currentVideo._id}`, {}, config)
+          : await axios.put(`https://vid-app1.herokuapp.com/api/users/save/${currentVideo._id}`, {}, config);
         dispatch(save(currentVideo._id));
       } catch (err) {
       }
@@ -194,8 +194,8 @@ const Video = () => {
           withCredentials: true
         }
         currentUser.following.includes(channel._id)
-          ? await axios.put(`http://localhost:3000/api/users/unfol/${channel._id}`, {}, config)
-          : await axios.put(`http://localhost:3000/api/users/fol/${channel._id}`, {}, config);
+          ? await axios.put(`https://vid-app1.herokuapp.com/api/users/unfol/${channel._id}`, {}, config)
+          : await axios.put(`https://vid-app1.herokuapp.com/api/users/fol/${channel._id}`, {}, config);
         dispatch(follow(channel._id));
       } catch (err) {
       }
@@ -211,10 +211,10 @@ const Video = () => {
           },
           withCredentials: true
         }
-        await axios.put(`http://localhost:3000/api/videos/view/${path}`, {}, config);
-        currentUser && await axios.put(`http://localhost:3000/api/users/history/${path}`, {}, config);
-        const videoRes = await axios.get(`http://localhost:3000/api/videos/find/${path}`, config);
-        const channelRes = await axios.get(`http://localhost:3000/api/users/find/${videoRes.data.userId}`, config);
+        await axios.put(`https://vid-app1.herokuapp.com/api/videos/view/${path}`, {}, config);
+        currentUser && await axios.put(`https://vid-app1.herokuapp.com/api/users/history/${path}`, {}, config);
+        const videoRes = await axios.get(`https://vid-app1.herokuapp.com/api/videos/find/${path}`, config);
+        const channelRes = await axios.get(`https://vid-app1.herokuapp.com/api/users/find/${videoRes.data.userId}`, config);
         setChannel(channelRes.data);
         dispatch(fetchSuccess(videoRes.data));
         setLoading(false);

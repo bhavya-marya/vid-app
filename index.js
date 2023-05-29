@@ -2,10 +2,10 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
-import userRoutes from "./routes/users.js";
-import videoRoutes from "./routes/videos.js";
-import commentRoutes from "./routes/comments.js";
-import authRoutes from "./routes/auth.js";
+import userRoutes from "./server/routes/users.js";
+import videoRoutes from "./server/routes/videos.js";
+import commentRoutes from "./server/routes/comments.js";
+import authRoutes from "./server/routes/auth.js";
 import cookieParser from "cookie-parser";
 
 const app = express();

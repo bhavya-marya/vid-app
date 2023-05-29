@@ -140,7 +140,7 @@ const Upload = ({ setOpen }) => {
                 withCredentials: true
             }
             console.log(tags);
-            const res = await axios.post("http://localhost:3000/api/videos", { ...inputs, tags }, config);
+            const res = await axios.post("https://vid-app1.herokuapp.com/api/videos", { ...inputs, tags }, config);
             setOpen(false);
             console.log(res);
             navigate(`/video/${res.data._id}`)

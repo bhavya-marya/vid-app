@@ -59,7 +59,7 @@ const Card = ({ type, video }) => {
     const [user, setUser] = useState([]);
     useEffect(() => {
         const fetchUser = async () => {
-            const res = await axios.get(`http://localhost:3000/api/users/find/${video.userId}`);
+            const res = await axios.get(`https://vid-app1.herokuapp.com/api/users/find/${video.userId}`);
             setUser(res.data);
         }
         fetchUser();
