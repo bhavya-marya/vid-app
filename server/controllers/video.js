@@ -51,6 +51,7 @@ export const deleteVideo = async (req, res, next) => {
 };
 
 export const getVideo = async (req, res, next) => {
+
     try {
         const video = await Video.findById(req.params.id);
         res.status(200).json(video);
@@ -80,6 +81,7 @@ export const random = async (req, res, next) => {
 };
 
 export const trending = async (req, res, next) => {
+    console.time();
     try {
         const videos = await Video.find().sort({ views: -1 });
         res.status(200).json(videos);

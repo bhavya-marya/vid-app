@@ -32,6 +32,7 @@ export const getComments = async (req, res, next) => {
         const comments = await Comment.find({ videoId: req.params.videoId });
         res.status(200).json(comments.sort((a, b) => b.createdAt - a.createdAt));
     } catch (err) {
+
         next(err);
     }
 };
